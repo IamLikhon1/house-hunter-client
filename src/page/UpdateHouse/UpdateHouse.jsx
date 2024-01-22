@@ -1,15 +1,21 @@
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateHouse = () => {
     const loader = useLoaderData();
+    const navigate=useNavigate();
     const { name, address, city, bedrooms, bathrooms, size, picture, date, rent, number, description,_id } = loader;
 
     const {
         register,
         handleSubmit
     } = useForm();
+
+    const goToBack=()=>{
+        navigate('/dashboard/ownerOwnList')
+    }
     const onSubmit = (data) => {
         const name = data.name;
         const address = data.address;
@@ -48,8 +54,9 @@ const UpdateHouse = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-semibold mt-10 text-center">Update the below Information</h2>
+            <span onClick={goToBack} className="flex gap-3 text-2xl items-center mt-3 cursor-pointer"><FaArrowLeftLong /><span className="text-xl font-semibold">Go To Back</span></span>
             <div className="flex justify-center mb-10">
-                <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-2 lg:mx-0 border-2 py-8 px-5 lg:px-10 lg:py-12 rounded-md mt-10 shadow-md ">
+                <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-2 lg:mx-0 border-2 py-8 px-5 lg:px-10 lg:py-10 rounded-md mt-10 shadow-md ">
                     <div className="grid lg:grid-cols-2 gap-5 lg:gap-3">
                         {/* house name */}
                         <div>
@@ -113,7 +120,7 @@ const UpdateHouse = () => {
                     {/*description*/}
                     <div>
                         <span className="my-4 font-semibold">Description*</span> <br />
-                        <textarea type="text" defaultValue={description} name='description' {...register("description", { required: true })} className="w-full  py-8 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
+                        <textarea type="text" defaultValue={description} name='description' {...register("description", { required: true })} className="w-full  py-10 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
                     </div>
 
                     {/* btn */}

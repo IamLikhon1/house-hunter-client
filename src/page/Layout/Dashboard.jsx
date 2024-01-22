@@ -3,6 +3,7 @@ import { FaHome } from "react-icons/fa";
 import { Toaster } from "react-hot-toast";
 import { MdAddHomeWork } from "react-icons/md";
 import { FaHouseChimney } from "react-icons/fa6";
+import { GrOverview } from "react-icons/gr";
 const Dashboard = () => {
     // const { isLoading, data } = useQuery({
     //     queryKey: ['userData'],
@@ -31,16 +32,17 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-64 min-h-full bg-base-200 ">
                     {/* Sidebar content here */}
-                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/overview'>Dashboard Overview</Link></li>
+                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/overview'><GrOverview /> Dashboard Overview</Link></li>
 
 
 
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/addHouse'> <MdAddHomeWork /> Add New House</Link></li>
 
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/ownerOwnList'> <FaHouseChimney /> Owners Houses</Link></li>
+
                     <div className="divider"></div>
 
-                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/'><FaHome></FaHome> Home</Link></li>
+                    <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/home'><FaHome></FaHome> Home</Link></li>
 
                 </ul>
 
