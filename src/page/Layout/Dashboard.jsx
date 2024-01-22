@@ -37,7 +37,7 @@ const Dashboard = () => {
 
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/addHouse'> <MdAddHomeWork /> Add New House</Link></li>
 
-                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/ownerOwnList'> <FaHouseChimney /> Owner Own Houses</Link></li>
+                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/ownerOwnList'> <FaHouseChimney /> Owners Houses</Link></li>
                     <div className="divider"></div>
 
                     <li><Link className=" mt-5 px-3 py-2 rounded-md text-lg font-semibold" to='/'><FaHome></FaHome> Home</Link></li>

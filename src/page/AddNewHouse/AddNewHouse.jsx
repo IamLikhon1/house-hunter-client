@@ -8,19 +8,19 @@ const AddNewHouse = () => {
         reset,
     } = useForm();
     const onSubmit = (data) => {
-        const name=data.name;
-        const address=data.address;
-        const city=data.city;
-        const bedrooms=data.bedrooms;
-        const bathrooms=data.bathrooms;
-        const size=data.size;
-        const picture= data.picture;
-        const date=data.date;
+        const name = data.name;
+        const address = data.address;
+        const city = data.city;
+        const bedrooms = data.bedrooms;
+        const bathrooms = data.bathrooms;
+        const size = data.size;
+        const picture = data.picture;
+        const date = data.date;
         const rent = parseFloat(data.rent);
-        const number=data.number;
-        const description=data.description;
+        const number = data.number;
+        const description = data.description;
 
-        const allStoreData={name,address,city,bedrooms,bathrooms,size,picture,date,rent,number,description};
+        const allStoreData = { name,address, city, bedrooms, bathrooms, size, picture, date, rent, number, description };
         // post data in mongodb
         fetch('http://localhost:5000/postHouseData', {
             method: 'POST',
@@ -35,7 +35,7 @@ const AddNewHouse = () => {
                     toast.success('You successfully add new House')
                     reset();
                 }
-                
+
             })
         console.log(allStoreData);
 
@@ -48,8 +48,8 @@ const AddNewHouse = () => {
                 <div className="grid lg:grid-cols-2 gap-5 lg:gap-3">
                     {/* house name */}
                     <div>
-                        <span className="my-4 font-semibold">House Name*</span> <br />
-                        <input type="text" name='name' {...register("name", { required: true })} className="w-full  py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="House Name" required />
+                        <span className="my-4 font-semibold">Owner Name*</span> <br />
+                        <input type="text" name='name' {...register("name", { required: true })} className="w-full  py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Owner Name" required />
                     </div>
                     {/* address */}
                     <div>
@@ -104,13 +104,13 @@ const AddNewHouse = () => {
                         <span className="my-4 font-semibold">Phone Number*</span> <br />
                         <input type="text" name='number' {...register("number", { required: true })} className="w-full  py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Phone Number" required />
                     </div>
+                    {/*description*/}
+                    <div>
+                        <span className="my-4 font-semibold">Description*</span> <br />
+                        <textarea type="text" name='description' {...register("description", { required: true })} className="w-full  py-8 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
+                    </div>
+                </div>
 
-                </div>
-                {/*description*/}
-                <div>
-                    <span className="my-4 font-semibold">Description*</span> <br />
-                    <textarea type="text" name='description' {...register("description", { required: true })} className="w-full  py-8 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
-                </div>
                 {/* btn */}
                 <div className="flex justify-center">
                     <input type="submit" value='SUBMIT' className="w-full  py-5  font-bold border-2 bg-[#07332F] text-white rounded-lg  mt-2 cursor-pointer" />
