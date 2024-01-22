@@ -104,12 +104,12 @@ const AddNewHouse = () => {
                         <span className="my-4 font-semibold">Phone Number*</span> <br />
                         <input type="text" name='number' {...register("number", { required: true })} className="w-full  py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Phone Number" required />
                     </div>
+                </div>
                     {/*description*/}
                     <div>
                         <span className="my-4 font-semibold">Description*</span> <br />
                         <textarea type="text" name='description' {...register("description", { required: true })} className="w-full  py-8 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
                     </div>
-                </div>
 
                 {/* btn */}
                 <div className="flex justify-center">

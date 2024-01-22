@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const OwnerOwnList = () => {
@@ -30,7 +31,7 @@ const OwnerOwnList = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Doctor data has been deleted.',
+                                'House data has been deleted.',
                                 'success'
                             )
                             refetch();
@@ -74,7 +75,7 @@ const OwnerOwnList = () => {
                                     <th>${item.rent}</th>
                                     <th>{item.bathrooms}/{item.bedrooms}</th>
                                     <td onClick={() => handleDelete(item._id)} className="bg-red-500 text-white rounded-md font-semibold cursor-pointer">Delete</td>
-                                    <td className="bg-blue-400 text-white rounded-md font-semibold cursor-pointer ">Update</td>
+                                    <Link to={`/updateHouse/${item._id}`}> <td className="bg-blue-400 text-white rounded-md font-semibold cursor-pointer ">Update</td> </Link>
                                 </tr>
                             ))
                         }

@@ -13,6 +13,7 @@ import Dashboard from './page/Layout/Dashboard';
 import Overview from './page/Overview/Overview';
 import AddNewHouse from './page/AddNewHouse/AddNewHouse';
 import OwnerOwnList from './page/OwnerOwnList/OwnerOwnList';
+import UpdateHouse from './page/UpdateHouse/UpdateHouse';
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
@@ -26,27 +27,33 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <LoginPage />
+      },
+      {
+        path:'updateHouse/:id',
+        element:<UpdateHouse/>,
+        loader:({params})=>fetch(`http://localhost:5000/getAllOwnerData/${params.id}`)
       }
     ]
   },
 
   {
-    path:'/dashboard',
-    element:<Dashboard/>,
-    children:[
+    path: '/dashboard',
+    element: <Dashboard />,
+    children: [
       {
-        path:'overview',
-        element:<Overview/>
+        path: 'overview',
+        element: <Overview />
       },
 
       {
-        path:'addHouse',
-        element:<AddNewHouse/>
+        path: 'addHouse',
+        element: <AddNewHouse />
       },
       {
-        path:'ownerOwnList',
-        element:<OwnerOwnList/>
+        path: 'ownerOwnList',
+        element: <OwnerOwnList />
       }
+      
     ]
   }
 ])
