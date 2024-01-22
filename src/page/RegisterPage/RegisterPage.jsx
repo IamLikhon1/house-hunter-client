@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
@@ -14,11 +15,25 @@ const RegisterPage = () => {
         const email = data.email;
         const password = data.password;
 
-        const allData = {
-            name, Roll: roll, number, email, password
-        };
-        reset();
-        console.log(allData);
+        const allData = { name, Roll: roll, number, email, password };
+        // post data in mongodb
+        fetch('http://localhost:5000/usersPost', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(allData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('You successfully register')
+                    reset();
+                }
+                else {
+                    toast.error('Email already exists. Please choose another email.');
+                }
+            })
 
     }
     return (
@@ -38,7 +53,7 @@ const RegisterPage = () => {
                     <input type="text" name='name' {...register("name", { required: true })} className="w-full lg:w-[95%] py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Full Name" required /> <br />
 
                     {/* roll */}
-                    <span className="my-4 font-semibold">Roll*</span> <br />
+                    <span className="my-4 font-semibold">Choice Roll*</span> <br />
                     <select className="w-full lg:w-[95%] py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" {...register("roll")}>
                         <option value="House Renter">House Renter</option>
                         <option value="House Owner">House Owner</option>
@@ -57,10 +72,12 @@ const RegisterPage = () => {
                     <input type="password" name='password' {...register("password", { required: true })} className="w-full lg:w-[95%] py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Enter phone number" required /> <br />
 
                     {/* btn */}
-                    <div className="flex justify-center">
-                        <input type="submit" value='SUBMIT' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
+                    <Link to='/dashboard/overview'>
+                        <div className="flex justify-center">
+                            <input type="submit" value='SUBMIT' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
 
-                    </div>
+                        </div>
+                    </Link>
                     <p className=" text-[#3B3A3A] mt-5 text-center font-semibold text-lg">Already registered? <Link to='/login'><span className="font-bold cursor-pointer"> Go to LOGIN</span></Link></p>
                 </form>
 
