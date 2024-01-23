@@ -37,7 +37,7 @@ const HomePage = () => {
                     </div>
                     {/* sort */}
                     <div>
-                        <button className="relative left-16 lg:left-0 px-10 py-4 rounded-md border-2 border-[#07332F] text-[#07332F] font-semibold mt-7 ml-3 hover:bg-[#07332F] hover:text-white duration-500" onClick={() => setAcs(!acs)}>
+                        <button className="relative left-10 lg:left-0 px-10 py-4 rounded-md border-2 border-[#07332F] text-[#07332F] font-semibold mt-7 ml-3 hover:bg-[#07332F] hover:text-white duration-500" onClick={() => setAcs(!acs)}>
                             {acs ? "Filter Rent: Low to High" : "Filter Rent: High to Low"}
                         </button>
                     </div>
