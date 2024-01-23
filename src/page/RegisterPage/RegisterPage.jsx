@@ -48,7 +48,7 @@ const RegisterPage = () => {
                     
                     <h2 className="text-4xl font-semibold">Register</h2>
                     <p className="text-xl mt-3">Join Our Community</p>
-                    <p className="font-bold mt-2 mx-2 lg:mx-0">[N.B. I {"didn't"} do any authentication so you can redirect to dashboard].</p>
+                    <p className="font-bold mt-2 mx-2 lg:mx-0">[N.B. There is no authentication so you can redirect to dashboard].</p>
                 </div>
                 <span onClick={goToBack} className="flex gap-3 text-2xl items-center mt-3 cursor-pointer justify-end"><span className="text-xl font-semibold">Go To Dashboard</span><FaArrowRightLong /></span>
             </div>

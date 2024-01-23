@@ -23,7 +23,7 @@ const Overview = () => {
     return (
         <div className="max-w-7xl mx-auto text-[#3B3A3A]">
             <h2 className="text-4xl font-bold mt-5">Dashboard Overview</h2>
-            <div className="grid lg:grid-cols-3 gap-5 lg:gap-0 mt-16">
+            <div className="grid lg:grid-cols-3 gap-5 lg:gap-0 mt-16 mb-5">
                 {/* owner */}
                 <div className="border rounded-lg pt-10 pb-5 pl-5 mx-5 cursor-pointer hover:shadow-md duration-300">
                     <div className="flex items-center gap-10">

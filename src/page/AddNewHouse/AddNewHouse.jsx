@@ -42,9 +42,9 @@ const AddNewHouse = () => {
     }
     return (
         <div className="max-w-7xl mx-auto text-[#3B3A3A]">
-            <h2 className="text-4xl font-bold mt-5">Add A New House</h2>
+            <h2 className="text-4xl font-bold mt-5 text-center lg:text-start">Add A New House</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-2 lg:mx-0 border py-8 px-3 lg:px-10 lg:py-12 rounded-md mt-10 mr-2 lg:mr-0">
+            <form onSubmit={handleSubmit(onSubmit)} className="w-full lg:mx-0 border py-8 px-3 lg:px-10 lg:py-12 rounded-md mt-10">
                 <div className="grid lg:grid-cols-2 gap-5 lg:gap-3">
                     {/* house name */}
                     <div>

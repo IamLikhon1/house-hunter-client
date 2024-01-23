@@ -33,7 +33,7 @@ const HomePage = () => {
                     {/* search */}
                     <div className="lg:flex mt-5">
                         <input type="text" ref={searchRef} className="mt-5 ml-2 lg:ml-0 w-fit px-14 lg:px-44 py-4 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by House Name" />
-                        <button onClick={handleSearch} className='px-8 lg:px-14  rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 lg:mt-5 ml-14 hover:bg-[#F7A582] hover:text-white duration-500 py-3'>Search</button>
+                        <button onClick={handleSearch} className='px-10 lg:px-14  rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 lg:mt-5 ml-3 hover:bg-[#F7A582] hover:text-white duration-500 py-4'>Search</button>
                     </div>
                     {/* sort */}
                     <div>
