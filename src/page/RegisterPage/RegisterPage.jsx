@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
@@ -31,6 +30,7 @@ const RegisterPage = () => {
                 if (data.insertedId) {
                     toast.success('You successfully register')
                     reset();
+                    navigate('/dashboard/overview')
                 }
                 else {
                     toast.error('Email already exists. Please choose another email.');
@@ -38,19 +38,15 @@ const RegisterPage = () => {
             })
 
     };
-    const goToBack = () => {
-        navigate('/dashboard/overview')
-    }
+
     return (
         <div className="max-w-7xl mx-auto">
             <div className="lg:ml-96 text-center lg:text-start mt-10">
                 <div className="text-[#3B3A3A]">
-                    
+
                     <h2 className="text-4xl font-semibold">Register</h2>
                     <p className="text-xl mt-3">Join Our Community</p>
-                    <p className="font-bold mt-2 mx-2 lg:mx-0">[N.B. There is no authentication so you can redirect to dashboard].</p>
                 </div>
-                <span onClick={goToBack} className="flex gap-3 text-2xl items-center mt-3 cursor-pointer justify-end"><span className="text-xl font-semibold">Go To Dashboard</span><FaArrowRightLong /></span>
             </div>
             <div className="flex justify-center mt-5 mb-10">
                 {/* form */}
