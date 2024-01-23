@@ -41,7 +41,7 @@ const Dashboard = () => {
 
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/ownerOwnList'> <FaHouseChimney /> Owners Houses</Link></li>
 
-                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/renterAllList'> <BsFillHouseAddFill /> Renter Houses List</Link></li>
+                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/renterAllList'> <BsFillHouseAddFill /> Renter Book Lists</Link></li>
 
                     <div className="divider"></div>
 

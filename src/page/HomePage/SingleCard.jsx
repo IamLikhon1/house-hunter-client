@@ -5,7 +5,7 @@ const SingleCard = ({ item }) => {
     return (
         <div>
             <div className="border-2 pt-2 pb-5 px-5 rounded-md cursor-pointer">
-                <span className="bg-[#F7A582] px-28 py-2 text-white font-bold text-2xl relative right-5 rounded-l-md">${rent}</span>
+                <span className="bg-[#F7A582] px-28 py-2 text-white font-bold text-2xl relative right-5 mb-3">${rent}</span>
                 <img className="w-[85%] h-fit mx-auto my-2" src="https://img.freepik.com/free-photo/view-3d-house-model_23-2150761166.jpg?t=st=1705943343~exp=1705946943~hmac=407ae3a8ab3bb2bbb02690be249ca52f4232bf32c61468dcd2382482d93157f6&w=740" alt="" />
 
                 <div>

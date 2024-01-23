@@ -20,7 +20,7 @@ const AddNewHouse = () => {
         const number = data.number;
         const description = data.description;
 
-        const allStoreData = { name,address, city, bedrooms, bathrooms, size, picture, date, rent, number, description };
+        const allStoreData = { name, address, city, bedrooms, bathrooms, size, picture, date, rent, number, description };
         // post data in mongodb
         fetch('https://house-hunter-server-production-454d.up.railway.app/postHouseData', {
             method: 'POST',
@@ -44,7 +44,7 @@ const AddNewHouse = () => {
         <div className="max-w-7xl mx-auto text-[#3B3A3A]">
             <h2 className="text-4xl font-bold mt-5">Add A New House</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-2 lg:mx-0 border py-8 px-5 lg:px-10 lg:py-12 rounded-md mt-10 ">
+            <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-2 lg:mx-0 border py-8 px-3 lg:px-10 lg:py-12 rounded-md mt-10 mr-2 lg:mr-0">
                 <div className="grid lg:grid-cols-2 gap-5 lg:gap-3">
                     {/* house name */}
                     <div>
@@ -105,11 +105,11 @@ const AddNewHouse = () => {
                         <input type="text" name='number' {...register("number", { required: true })} className="w-full  py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Phone Number" required />
                     </div>
                 </div>
-                    {/*description*/}
-                    <div>
-                        <span className="my-4 font-semibold">Description*</span> <br />
-                        <textarea type="text" name='description' {...register("description", { required: true })} className="w-full  py-8 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
-                    </div>
+                {/*description*/}
+                <div>
+                    <span className="my-4 font-semibold">Description*</span> <br />
+                    <textarea type="text" name='description' {...register("description", { required: true })} className="w-full  py-8 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Description" required />
+                </div>
 
                 {/* btn */}
                 <div className="flex justify-center">

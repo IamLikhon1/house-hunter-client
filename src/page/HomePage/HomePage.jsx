@@ -28,12 +28,12 @@ const HomePage = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="mt-10 lg:mt-16">
-            <span onClick={goToBack} className="flex gap-3 text-2xl items-center mt-3 cursor-pointer"><span className="text-xl font-semibold">Go To Dashboard</span><FaArrowRightLong /></span>
+            <span onClick={goToBack} className="flex gap-3 text-2xl items-center mt-3 cursor-pointer"><span className="text-xl font-semibold ml-1">Go To Dashboard</span><FaArrowRightLong /></span>
                 <div className="lg:flex items-center justify-between">
                     {/* search */}
-                    <div className="flex mt-5">
-                        <input type="text" ref={searchRef} className="mt-5 ml-2 lg:ml-0 w-fit px-8 lg:px-44 py-4 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by House Name" />
-                        <button onClick={handleSearch} className='px-4 lg:px-14  rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 lg:mt-5 ml-3 hover:bg-[#F7A582] hover:text-white duration-500'>Search</button>
+                    <div className="lg:flex mt-5">
+                        <input type="text" ref={searchRef} className="mt-5 ml-2 lg:ml-0 w-fit px-14 lg:px-44 py-4 rounded-lg border-2 focus:outline-none bg-[#F3F3F3]" placeholder="Search by House Name" />
+                        <button onClick={handleSearch} className='px-8 lg:px-14  rounded-md border-2 border-[#F7A582] text-[#F7A582] font-semibold mt-4 lg:mt-5 ml-14 hover:bg-[#F7A582] hover:text-white duration-500 py-3'>Search</button>
                     </div>
                     {/* sort */}
                     <div>

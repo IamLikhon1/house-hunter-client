@@ -55,7 +55,7 @@ const Overview = () => {
                         <div className="text-6xl text-[#6C6B6B] ">{bookData.length}</div>
                     </div>
                     <hr className="border-2 border-[#7BB13C] mt-5 mr-4" />
-                    <p className="text-[#3B3A3A] text-xl mt-3 font-semibold">Appointments</p>
+                    <p className="text-[#3B3A3A] text-xl mt-3 font-semibold">Bookings</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 const OpenModal = () => {
     const {
@@ -37,6 +37,7 @@ const OpenModal = () => {
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
                     <div>
+                        <Toaster/>
                         <h2 className="text-2xl text-[#07332F] my-3 font-bold text-center">Rent Your Dream Home</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
 

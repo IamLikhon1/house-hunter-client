@@ -37,10 +37,10 @@ const LoginPage = () => {
                     <input type="password" name='password' {...register("password", { required: true })} className="w-full lg:w-[95%] py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Enter phone number" required /> <br />
 
                     {/* btn */}
-                    <div className="flex justify-center">
+                   <Link to='/dashboard/overview'> <div className="flex justify-center">
                         <input type="submit" value='LOGIN' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
 
-                    </div>
+                    </div></Link>
                     <p className=" text-[#3B3A3A] mt-5 text-center font-semibold text-lg">{"Don't"} have account? <Link to='/'><span className="font-bold cursor-pointer"> Go to Register</span></Link></p>
                 </form>
 
