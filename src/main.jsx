@@ -15,6 +15,7 @@ import AddNewHouse from './page/AddNewHouse/AddNewHouse';
 import OwnerOwnList from './page/OwnerOwnList/OwnerOwnList';
 import UpdateHouse from './page/UpdateHouse/UpdateHouse';
 import HomePage from './page/HomePage/HomePage';
+import RenterHouseList from './page/RenterHouseList/RenterHouseList';
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: 'updateHouse/:id',
         element: <UpdateHouse />,
-        loader: ({ params }) => fetch(`http://localhost:5000/getAllOwnerData/${params.id}`)
+        loader: ({ params }) => fetch(`https://house-hunter-server-production-454d.up.railway.app/getAllOwnerData/${params.id}`)
       }
     ]
   },
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: 'ownerOwnList',
         element: <OwnerOwnList />
+      },
+      {
+        path: 'renterAllList',
+        element:<RenterHouseList/>
       }
 
     ]

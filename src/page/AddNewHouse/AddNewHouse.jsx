@@ -22,7 +22,7 @@ const AddNewHouse = () => {
 
         const allStoreData = { name,address, city, bedrooms, bathrooms, size, picture, date, rent, number, description };
         // post data in mongodb
-        fetch('http://localhost:5000/postHouseData', {
+        fetch('https://house-hunter-server-production-454d.up.railway.app/postHouseData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -95,7 +95,7 @@ const AddNewHouse = () => {
 
                     {/* Rent per Month */}
                     <div>
-                        <span className="my-4 font-semibold">Rent per Month*</span> <br />
+                        <span className="my-4 font-semibold">Rent per Month $*</span> <br />
                         <input type="number" name='rent' {...register("rent", { required: true })} className="w-full  py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Rent per Month" required />
                     </div>
 

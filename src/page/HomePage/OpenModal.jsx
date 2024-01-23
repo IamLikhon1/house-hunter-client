@@ -13,7 +13,7 @@ const OpenModal = () => {
         const email = data.email;
         const allInfo = { name, number, email }
 
-        fetch('http://localhost:5000/postRenterData', {
+        fetch('https://house-hunter-server-production-454d.up.railway.app/postRenterData', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

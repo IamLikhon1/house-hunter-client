@@ -31,7 +31,7 @@ const UpdateHouse = () => {
 
         const allStoreData = { name,address, city, bedrooms, bathrooms, size, picture, date, rent, number, description };
         // post data in mongodb
-        fetch(`http://localhost:5000/updateHouses/${_id}`,{
+        fetch(`https://house-hunter-server-production-454d.up.railway.app/updateHouses/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

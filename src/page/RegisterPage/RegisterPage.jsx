@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -17,7 +19,7 @@ const RegisterPage = () => {
 
         const allData = { name, Roll: roll, number, email, password };
         // post data in mongodb
-        fetch('http://localhost:5000/usersPost', {
+        fetch('https://house-hunter-server-production-454d.up.railway.app/usersPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -35,14 +37,20 @@ const RegisterPage = () => {
                 }
             })
 
+    };
+    const goToBack = () => {
+        navigate('/dashboard/overview')
     }
     return (
         <div className="max-w-7xl mx-auto">
             <div className="lg:ml-96 text-center lg:text-start mt-10">
                 <div className="text-[#3B3A3A]">
+                    
                     <h2 className="text-4xl font-semibold">Register</h2>
                     <p className="text-xl mt-3">Join Our Community</p>
+                    <p className="font-bold mt-2">[N.B. I {"didn't"} do any authentication so you can redirect to dashboard].</p>
                 </div>
+                <span onClick={goToBack} className="flex gap-3 text-2xl items-center mt-3 cursor-pointer justify-end"><span className="text-xl font-semibold">Go To Dashboard</span><FaArrowRightLong /></span>
             </div>
             <div className="flex justify-center mt-5 mb-10">
                 {/* form */}
@@ -73,10 +81,10 @@ const RegisterPage = () => {
 
                     {/* btn */}
                     {/* <Link to='/dashboard/overview'> */}
-                        <div className="flex justify-center">
-                            <input type="submit" value='SUBMIT' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
+                    <div className="flex justify-center">
+                        <input type="submit" value='REGISTER' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
 
-                        </div>
+                    </div>
                     {/* </Link> */}
                     <p className=" text-[#3B3A3A] mt-5 text-center font-semibold text-lg">Already registered? <Link to='/login'><span className="font-bold cursor-pointer"> Go to LOGIN</span></Link></p>
                 </form>

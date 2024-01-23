@@ -4,11 +4,12 @@ import { Toaster } from "react-hot-toast";
 import { MdAddHomeWork } from "react-icons/md";
 import { FaHouseChimney } from "react-icons/fa6";
 import { GrOverview } from "react-icons/gr";
+import { BsFillHouseAddFill } from "react-icons/bs";
 const Dashboard = () => {
     // const { isLoading, data } = useQuery({
     //     queryKey: ['userData'],
     //     queryFn: () =>
-    //         fetch('http://localhost:5000/users').then((res) =>
+    //         fetch('https://house-hunter-server-production-454d.up.railway.app/users').then((res) =>
     //             res.json()
     //         ),
     // })
@@ -39,6 +40,8 @@ const Dashboard = () => {
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/addHouse'> <MdAddHomeWork /> Add New House</Link></li>
 
                     <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/ownerOwnList'> <FaHouseChimney /> Owners Houses</Link></li>
+
+                    <li><Link className=" mt-8 px-3 py-2 rounded-md text-lg font-semibold" to='/dashboard/renterAllList'> <BsFillHouseAddFill /> Renter Houses List</Link></li>
 
                     <div className="divider"></div>
 

@@ -15,7 +15,7 @@ const HomePage = () => {
     };
     useEffect(() => {
         fetch(
-            `http://localhost:5000/getAllSearchData?search=${search}&sort=${acs ? "asc" : "desc"
+            `https://house-hunter-server-production-454d.up.railway.app/getAllSearchData?search=${search}&sort=${acs ? "asc" : "desc"
             }`
         )
             .then((res) => res.json())

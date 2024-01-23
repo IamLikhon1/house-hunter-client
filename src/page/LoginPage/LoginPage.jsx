@@ -38,7 +38,7 @@ const LoginPage = () => {
 
                     {/* btn */}
                     <div className="flex justify-center">
-                        <input type="submit" value='SUBMIT' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
+                        <input type="submit" value='LOGIN' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
 
                     </div>
                     <p className=" text-[#3B3A3A] mt-5 text-center font-semibold text-lg">{"Don't"} have account? <Link to='/'><span className="font-bold cursor-pointer"> Go to Register</span></Link></p>

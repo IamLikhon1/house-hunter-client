@@ -1,17 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const OwnerOwnList = () => {
+const RenterHouseList = () => {
     const { isLoading, data, refetch } = useQuery({
         queryKey: ['ownersData'],
         queryFn: () =>
-            fetch('https://house-hunter-server-production-454d.up.railway.app/getAllOwnerData').then((res) =>
+            fetch('https://house-hunter-server-production-454d.up.railway.app/getAllRenterData').then((res) =>
                 res.json()
             ),
     })
     if (isLoading) return <div className="text-2xl text-center">Loading ...</div>
-    // console.log(data);
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -23,7 +21,7 @@ const OwnerOwnList = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://house-hunter-server-production-454d.up.railway.app/deleteData/${id}`, {
+                fetch(`https://house-hunter-server-production-454d.up.railway.app/deleteDataRenter/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -31,7 +29,7 @@ const OwnerOwnList = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'House data has been deleted.',
+                                'Renters House data has been deleted.',
                                 'success'
                             )
                             refetch();
@@ -44,38 +42,30 @@ const OwnerOwnList = () => {
     }
     return (
         <div className="max-w-7xl mx-auto text-[#3B3A3A]">
-            <h2 className="text-4xl font-bold mt-5">ALL Owners Lists</h2>
+            <h2 className="text-4xl font-bold mt-5">Renters Book Houses</h2>
             <div className="overflow-x-auto mt-10">
                 <table className="table text-center text-lg">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Owner Name</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Number</th>
-                            <th>Rent</th>
-                            <th>Bathrooms/Bedrooms</th>
+                            <th>Renter Name</th>
+                            <th>Renter Email</th>
+                            <th>Renter Number</th>
                             <th>Delete Action</th>
-                            <th>Update Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
                         {
                             data?.map((item, index) => (
 
                                 <tr key={item._id}>
                                     <th>{index + 1}</th>
                                     <td>{item.name}</td>
-                                    <td>{item.address}</td>
-                                    <td>{item.city}</td>
+                                    <td>{item.email}</td>
                                     <td>{item.number}</td>
-                                    <th>${item.rent}</th>
-                                    <th>{item.bathrooms}/{item.bedrooms}</th>
                                     <td onClick={() => handleDelete(item._id)} className="bg-red-500 text-white rounded-md font-semibold cursor-pointer">Delete</td>
-                                    <Link to={`/updateHouse/${item._id}`}> <td className="bg-blue-400 text-white rounded-md font-semibold cursor-pointer ">Update</td> </Link>
+
                                 </tr>
                             ))
                         }
@@ -87,4 +77,4 @@ const OwnerOwnList = () => {
     );
 };
 
-export default OwnerOwnList;
+export default RenterHouseList;
