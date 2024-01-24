@@ -1,20 +1,15 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
-        reset,
+
     } = useForm();
-    const onSubmit = (data) => {
-        const email = data.email;
-        const password = data.password;
-
-        const allData = { email, password };
-        reset();
-        console.log(allData);
-
+    const onSubmit = () => {
+        navigate('/dashboard/overview')
     }
     return (
         <div className="max-w-7xl mx-auto">
@@ -37,10 +32,10 @@ const LoginPage = () => {
                     <input type="password" name='password' {...register("password", { required: true })} className="w-full lg:w-[95%] py-4 px-3 font-semibold border-2 focus:outline-none rounded-lg  my-3" placeholder="Enter phone number" required /> <br />
 
                     {/* btn */}
-                   <Link to='/dashboard/overview'> <div className="flex justify-center">
+                    <div className="flex justify-center">
                         <input type="submit" value='LOGIN' className="w-full lg:w-[100%] py-4 px-3 font-semibold border-2 bg-[#07332F] text-white rounded-lg  mt-3 cursor-pointer" />
 
-                    </div></Link>
+                    </div>
                     <p className=" text-[#3B3A3A] mt-5 text-center font-semibold text-lg">{"Don't"} have account? <Link to='/'><span className="font-bold cursor-pointer"> Go to Register</span></Link></p>
                 </form>
 

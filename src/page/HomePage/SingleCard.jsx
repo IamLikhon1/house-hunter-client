@@ -1,15 +1,15 @@
 import OpenModal from "./OpenModal";
 
 const SingleCard = ({ item }) => {
-    const { name, address, bathrooms, bedrooms, rent, city, number } = item;
+    const { name, address, bathrooms, bedrooms, rent, city, number,picture } = item;
     return (
         <div>
             <div className="border-2 pt-2 pb-5 px-5 rounded-md cursor-pointer">
-                <span className="bg-[#F7A582] px-28 py-2 text-white font-bold text-2xl relative right-5 mb-3">${rent}</span>
-                <img className="w-[85%] h-fit mx-auto my-2" src="https://img.freepik.com/free-photo/view-3d-house-model_23-2150761166.jpg?t=st=1705943343~exp=1705946943~hmac=407ae3a8ab3bb2bbb02690be249ca52f4232bf32c61468dcd2382482d93157f6&w=740" alt="" />
+                <div className="bg-[#F7A582] w-[55%] py-2 font-bold text-2xl relative bottom-2 right-5  text-center">${rent}</div>
+                <img className="w-[95%] h-[80%] mx-auto my-1 rounded-md" src={picture} alt="" />
 
                 <div>
-                    <h2 className="text-xl font-bold h-14 my-2">Owner Name : {name}</h2>
+                    <h2 className="text-xl font-bold h-14 mt-4">Owner Name : {name}</h2>
                     <hr className="border border-gray-400 w-[300px] mt-6" />
                     <h4 className="text-lg font-semibold my-2">Address: {address}</h4>
                     <h4 className="text-lg font-semibold my-2">City: {city}</h4>
